@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  @keyframes fade {
+    0% {
+      opacity: 0;
+      transform: translateX(100%); 
+    }
+    10% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    90% {
+      opacity: 1;
+      transform: translateX(0); 
+    }
+    100% {
+      opacity: 0;
+      transform: translateX(-100%); 
+    }
+  }
+  
+  .animate-fade {
+    animation: fade 15s ease-in-out forwards;
+    -webkit-animation: fade 15s ease-in-out forwards;
+    -webkit-animation: fade 15s ease-in-out forwards;
+}
+  
+  
+}
